@@ -374,7 +374,7 @@
             });
         });
     </script>
-    // No final do arquivo, antes do </body>
+
 <script>
     // Pré-visualização de imagem
     document.addEventListener('DOMContentLoaded', function() {

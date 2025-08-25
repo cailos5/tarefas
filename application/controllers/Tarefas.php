@@ -31,7 +31,7 @@ class Tarefas extends MY_Controller {
 
             if ($this->form_validation->run() === FALSE) {
                 $data['erro'] = validation_errors();
-                $this->load->view('tarefas/adicionar', $data);
+                $this->load->view('tarefas/adicionar/editar/editar', $data);
                 return;
             }
 
@@ -50,7 +50,7 @@ class Tarefas extends MY_Controller {
                     $imagem = $upload_data['file_name'];
                 } else {
                     $data['erro'] = $this->upload->display_errors();
-                    $this->load->view('tarefas/adicionar', $data);
+                    $this->load->view('tarefas/adicionar/editar', $data);
                     return;
                 }
             }
@@ -72,7 +72,7 @@ class Tarefas extends MY_Controller {
             
             redirect('tarefas');
         } else {
-            $this->load->view('tarefas/adicionar');
+            $this->load->view('tarefas/adicionar/editar');
         }
     }
 
@@ -95,7 +95,7 @@ class Tarefas extends MY_Controller {
             if ($this->form_validation->run() === FALSE) {
                 $data['erro'] = validation_errors();
                 $data['tarefa'] = $tarefa;
-                $this->load->view('tarefas/editar', $data);
+                $this->load->view('tarefas/adicionar/editar', $data);
                 return;
             }
 
@@ -121,7 +121,7 @@ class Tarefas extends MY_Controller {
                 } else {
                     $data['erro'] = $this->upload->display_errors();
                     $data['tarefa'] = $tarefa;
-                    $this->load->view('tarefas/editar', $data);
+                    $this->load->view('tarefas/adicionar/editar', $data);
                     return;
                 }
             }
@@ -143,7 +143,7 @@ class Tarefas extends MY_Controller {
             redirect('tarefas');
         } else {   
             $data['tarefa'] = $tarefa;
-            $this->load->view('tarefas/editar', $data);
+            $this->load->view('tarefas/adicionar/editar', $data);
         }
     }
 
